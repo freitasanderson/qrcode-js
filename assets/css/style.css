@@ -1,0 +1,133 @@
+*{
+    font-family: 'Monocraft', sans-serif;
+}
+html{
+    background-image: url(../svg/background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #06083D;
+
+    color: #cccccc;
+}
+
+h1{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#divUrl{
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#divUrl input{
+    width: 30rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 8px;
+    filter: drop-shadow(0px 2px 3px #cccccc);
+}
+
+#divUrl button{
+    width: 10rem;
+    height: 2.4rem;
+    background-color: #008218;
+    border: 0;
+    color: #cccccc;
+    border-radius: 8px;
+    filter: drop-shadow(0px 2px 3px #cccccc);
+
+}
+#divUrl button:hover{
+    background-color: #00a61e;
+    cursor: pointer;
+}
+#qrcode{
+    display: flex;
+    margin-top: 2.5rem;
+    padding: 2rem;
+    border-radius: 12px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#colors{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    filter: drop-shadow(0px 2px 3px #cccccc);
+
+}
+
+#qr, #fundo{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #dddddd;
+    color: #222222;
+}
+
+#qr:hover, #fundo:hover{
+    background-color: #bbbbbb;
+    cursor: pointer;
+}
+
+label{
+    cursor: pointer;
+}
+
+#fundo{
+    border-radius: 12px 12px 0px 0px;
+}
+
+#qr{
+    border-radius: 0px 0px 12px 12px;
+}
+
+#corEscura, #corClara{
+    border: 0;
+    cursor: pointer;
+}
+#div-btns{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5rem;
+}
+
+#btn-download, #btn-extrair{
+    width: 10rem;
+    height: 2.4rem;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: #008218;
+    border: 0;
+    color: #cccccc;
+    border-radius: 8px;
+    filter: drop-shadow(0px 2px 3px #cccccc);
+}
+#preview{
+    width: 40vw;
+    margin: auto;
+    padding-top: 2rem;
+    filter: drop-shadow(0px 1px 2px #cccccc);
+}
+#btn-download:hover, #btn-extrair:hover{
+    background-color: #00a61e;
+    cursor: pointer;
+}
+@font-face {
+    font-family: 'Monocraft';
+    src: url(../fonts/Monocraft.otf);
+}

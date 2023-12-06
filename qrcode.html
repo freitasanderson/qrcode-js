@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Instascan</title>
-    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
-  </head>
-  <body>
-    <video id="preview"></video>
-    <script>
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview'),mirror: false
-            }
-        );
-        scanner.addListener('scan', function(content) {
-            alert('Escaneou o conteudo: ' + content);
-            window.open(content, "_blank");
-        });
-        Instascan.Camera.getCameras().then(cameras => 
-        {
-            if(cameras.length > 1){
-                scanner.start(cameras[1]);
-            }
-            else if (cameras.length >0){
-                scanner.start(cameras[0]);
-            } else {
-                console.error("Não existe câmera no dispositivo!");
-            }
-        });
-    </script>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- </body>
+    <title>FC QRCode Generator</title>
+
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/js/qrcode.js"></script>
+
+    <link rel="shortcut icon" href="assets/svg/FC QR Code Generator Icon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main>
+
+        <h1>FC QRCode Generator</h1>
+
+        <div id="div-btns">
+            <a href="/index.html" id="btn-extrair">Criar QRCode</a>
+        </div>
+
+        <video id="preview"></video>
+        <script>
+            let scanner = new Instascan.Scanner(
+                {
+                    video: document.getElementById('preview'),mirror: false
+                }
+            );
+            scanner.addListener('scan', function(content) {
+                alert('Escaneou o conteudo: ' + content);
+                window.open(content, "_blank");
+            });
+            Instascan.Camera.getCameras().then(cameras => 
+            {
+                if(cameras.length > 1){
+                    scanner.start(cameras[1]);
+                }
+                else if (cameras.length >0){
+                    scanner.start(cameras[0]);
+                } else {
+                    console.error("Não existe câmera no dispositivo!");
+                }
+            });
+        </script>
+    </main>
+</body>
+
+<script type="text/javascript" src="assets/js/createQrCode.js"></script>
+
 </html>

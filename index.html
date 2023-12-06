@@ -1,27 +1,48 @@
-<html>
-    <head>
-        <script type="text/javascript" src="qrcode.js"></script>
-    </head>
-    <body>
-        <input type="text" id="valor" value="">
-        <button onClick="createQrCode()">Gerar QR Code</button>
-        <div id="qrcode"></div>
-    </body>
-    <script>
-    
-    function createQrCode()
-    {
-        var userInput = document.getElementById('valor').value;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        var qrcode = new QRCode("qrcode", {
-            text: userInput,
-            width: 256,
-            height: 256,
-            colorDark: "black",
-            colorLight: "white",
-            correctLevel : QRCode.CorrectLevel.H
-        });
-    }
-    
-    </script>
+    <title>FC QRCode Generator</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/js/qrcode.js"></script>
+
+    <link rel="shortcut icon" href="assets/svg/FC QR Code Generator Icon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main>
+
+        <h1>FC QRCode Generator</h1>
+
+        <div id="divUrl">
+            <input type="text" id="valor" value="">
+            <button id="createQrCode" onClick="createQrCode()">Gerar QR Code</button>
+        </div>
+        <div id="colors">
+
+            <div id="fundo">
+                <input type="color" id="corEscura" value="">
+                <label for="corEscura">Cor Escura</label>
+            </div>
+
+            <div id="qr">
+                <input type="color" id="corClara" value="">
+                <label for="corClara">Cor Clara</label>
+            </div>
+
+        </div>
+        <div id="qrcode"></div>
+
+        <div id="div-btns">
+            <a href="/qrcode.html" id="btn-extrair">Extrair QRCode</a>
+        </div>
+    </main>
+</body>
+
+<script type="text/javascript" src="assets/js/createQrCode.js"></script>
+
 </html>
